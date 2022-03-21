@@ -1,0 +1,26 @@
+%reset -f
+import random
+computador = random.randint (2,99) 
+print ('Olá, sou seu computador e estou pensando em um numero,será que você consegue descobrir qual é?')
+palpite=0
+valormaior = 100
+valormenor = 1
+if palpite!=computador:
+
+  while palpite != computador and (valormenor!= computador-1 or valormaior != computador+1) : 
+
+    print('Está entre ', valormenor, 'e', valormaior)
+    palpite = int(input())
+    if palpite == computador-1 and valormaior == computador+1 or (valormenor == computador - 1 and palpite == computador+1) :
+      if palpite == computador+1:
+        print('O número que pensei era:', computador,', ele estava entre', valormenor, 'e', palpite,'. Parabéns, você venceu!')
+      elif palpite == computador-1:
+        print('O número que pensei era:', computador,', ele estava entre', palpite, 'e', valormaior,'. Parabéns, você venceu!')
+    if palpite>computador:
+      valormaior=palpite 
+    if palpite<computador:
+      valormenor=palpite
+    if palpite == computador:
+      print('O computador venceu!')
+else:
+  print('O computador venceu!')
